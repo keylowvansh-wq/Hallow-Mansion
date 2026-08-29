@@ -1,37 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electroart</title>
 <link rel="stylesheet" href="style.css">
+<title>Blackwood Manor Tickets</title>
 </head>
 <body>
-<div id="ui">
+<div id="cursor"></div>
+<div id="head">
+<h1>BLACKWOOD MANOR</h1>
+<h3>ALL HALLOWS' EVE EXPERIENCE</h3>
+</div>
+<div id="main">
+<div id="formBox">
+<h2>RESERVE YOUR NIGHTMARE</h2>
 <div class="row">
-<label>Speed</label>
-<input type="range" id="spd" min="1" max="10" value="4">
+<label>Full Name:</label>
+<input type="text" id="fname" placeholder="John Doe">
 </div>
 <div class="row">
-<label>Zoom</label>
-<input type="range" id="zm" min="1" max="20" value="5">
-</div>
-<div class="row">
-<label>Palette</label>
-<select id="pal">
-<option value="0">Pink/Cyan</option>
-<option value="1">Neon</option>
-<option value="2">Gold</option>
-<option value="3">Purple</option>
-<option value="4">Forest</option>
+<label>Date:</label>
+<select id="date">
+<option>Oct 29</option>
+<option>Oct 30</option>
+<option selected>Oct 31 (Halloween)</option>
 </select>
 </div>
 <div class="row">
-<button id="saveBtn">Export PNG</button>
+<label>Time:</label>
+<select id="time">
+<option>8:00 PM</option>
+<option>10:00 PM</option>
+<option>12:00 AM (Midnight)</option>
+</select>
+</div>
+<button id="nextBtn" onclick="nextStep()">CONTINUE</button>
 </div>
 </div>
-<div id="fps">0 FPS</div>
-<canvas id="cv"></canvas>
-<script src="app.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
