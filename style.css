@@ -1,106 +1,90 @@
-*{
-box-sizing: border-box;
-}
-body, html{
+body{
+background: #0a0a0a;
+color: #ff7518;
+font-family: 'Courier New', monospace;
 margin: 0;
 padding: 0;
-width: 100%;
-height: 100%;
-background-color: #050505;
-overflow: hidden;
-font-family: 'Courier New', Courier, monospace;
+text-align: center;
+cursor: none;
 }
-#cv{
-display: block;
-width: 100vw;
-height: 100vh;
-cursor: crosshair;
+#cursor{
+position: fixed;
+width: 20px;
+height: 20px;
+border: 2px solid #ff7518;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+}
+#head{
+background: #1a0500;
+padding: 40px;
+border-bottom: 4px solid #ff7518;
 }
 
-#ui{
-position: absolute;
-top: 15px;
-left: 15px;
-background: rgba(10, 10, 10, 0.85);
-padding: 15px;
-border-radius: 6px;
-border: 1px solid #333;
-color: #ccc;
-z-index: 10;
-min-width: 200px;
+h1{
+font-size: 50px;
+margin: 0;
+letter-spacing: 5px;
 }
+
+h3 {
+font-size: 20px;
+color: #888;
+margin-top: 10px;
+}
+
+#main{
+padding: 50px 20px;
+}
+#formBox{
+background: #111;
+max-width: 500px;
+margin: 0 auto;
+padding: 40px;
+border: 2px solid #333;
+}
+h2{
+margin-top: 0;
+border-bottom: 1px solid #333;
+padding-bottom: 20px;
+}
+
 .row{
-margin-bottom: 12px;
-}
-.row:last-child{
-margin-bottom: 0;
+margin-bottom: 20px;
+text-align: left;
 }
 
 label{
 display: block;
-font-size: 11px;
 margin-bottom: 5px;
-text-transform: uppercase;
-letter-spacing: 1px;
-color: #888;
+font-size: 14px;
+color: #aaa;
 }
-input[type="range"]{
+input, select{
 width: 100%;
-height: 4px;
-background: #333;
-outline: none;
-border-radius: 2px;
-}
-
-input[type="range"]::-webkit-slider-thumb{
--webkit-appearance: none;
-width: 12px;
-height: 12px;
-background: #e94560;
-border-radius: 50%;
-cursor: pointer;
-}
-
-select{
-width: 100%;
-padding: 6px;
-background: #1a1a1a;
-color: #fff;
+padding: 10px;
+background: #000;
 border: 1px solid #444;
-border-radius: 4px;
+color: #fff;
 font-family: inherit;
-font-size: 12px;
-outline: none;
-}
-
-select:focus{
-border-color: #e94560;
+box-sizing: border-box;
 }
 
 button{
-width: 100%;
-padding: 8px;
-background: #222;
-color: #fff;
-border: 1px solid #444;
-border-radius: 4px;
+background: #ff7518;
+color: #000;
+border: none;
+padding: 15px 30px;
+font-size: 18px;
+font-weight: bold;
+cursor: none;
 font-family: inherit;
-font-size: 11px;
-text-transform: uppercase;
-letter-spacing: 1px;
-cursor: pointer;
-transition: background 0.2s;
+margin-top: 20px;
+width: 100%;
 }
+
 button:hover{
-background: #333;
-border-color: #e94560;
-}
-#fps{
-position: absolute;
-bottom: 15px;
-right: 15px;
-color: #555;
-font-size: 11px;
-z-index: 10;
-pointer-events: none;
+background: #ff9900;
 }
