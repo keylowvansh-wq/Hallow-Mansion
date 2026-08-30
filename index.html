@@ -42,6 +42,17 @@ I, the undersigned, acknowledge that the Blackwood Manor Halloween Experience co
 <input type="checkbox" id="agree" style="width: auto; margin-right: 10px;">
 <label for="agree" style="display:inline;">I have read and accept the terms of my own demise.</label>
 </div>
+
+<div class="row" style="margin-top: 30px;">
+<label>FEAR TOLERANCE LEVEL:</label>
+<input type="range" id="fear" min="1" max="10" value="5">
+<div id="fearLabel" style="text-align: center; margin-top: 10px; color: #ff7518;">Level 5: Moderate</div>
+</div>
+
+<div class="row">
+<label>SPECIAL REQUESTS / ALLERGIES:</label>
+<textarea id="notes" rows="3" placeholder="Tell us what scares you..."></textarea>
+</div>
 </div>
 
 <button id="nextBtn" onclick="nextStep()">CONTINUE</button>
