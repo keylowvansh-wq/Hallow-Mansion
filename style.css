@@ -19,17 +19,18 @@ z-index: 9999;
 transform: translate(-50%, -50%);
 transition: width 0.1s, height 0.1s;
 }
+
 #head{
 background: #1a0500;
 padding: 40px;
 border-bottom: 4px solid #ff7518;
 }
-
 h1{
 font-size: 50px;
 margin: 0;
 letter-spacing: 5px;
 }
+
 h3{
 font-size: 20px;
 color: #888;
@@ -57,6 +58,7 @@ padding-bottom: 20px;
 margin-bottom: 20px;
 text-align: left;
 }
+
 label{
 display: block;
 margin-bottom: 5px;
@@ -73,7 +75,6 @@ color: #fff;
 font-family: inherit;
 box-sizing: border-box;
 }
-
 button{
 background: #ff7518;
 color: #000;
@@ -86,10 +87,14 @@ font-family: inherit;
 margin-top: 20px;
 width: 100%;
 }
+
 button:hover{
 background: #ff9900;
 }
-
+button:disabled{
+background: #555;
+cursor: not-allowed;
+}
 .waiver-text{
 background: #000;
 border: 1px dashed #555;
@@ -116,12 +121,32 @@ height: 20px;
 background: #ff7518;
 cursor: none;
 }
-
 textarea{
 resize: vertical;
 }
-
 .red-text{
 color: red !important;
 border-color: red !important;
+}
+#loader{
+max-width: 500px;
+margin: 100px auto;
+}
+
+#progBox{
+width: 100%;
+height: 20px;
+background: #222;
+border: 1px solid #444;
+margin: 20px 0;
+}
+#progFill{
+height: 100%;
+background: #ff7518;
+width: 0%;
+transition: width 0.2s;
+}
+#loadTxt{
+color: #888;
+font-size: 14px;
 }
