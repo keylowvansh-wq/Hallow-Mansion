@@ -32,7 +32,6 @@
 <option>12:00 AM (Midnight)</option>
 </select>
 </div>
-
 <div id="waiver" style="display:none;">
 <div class="waiver-text">
 LIABILITY WAIVER AND RELEASE OF CLAIMS<br><br>
@@ -48,14 +47,19 @@ I, the undersigned, acknowledge that the Blackwood Manor Halloween Experience co
 <input type="range" id="fear" min="1" max="10" value="5">
 <div id="fearLabel" style="text-align: center; margin-top: 10px; color: #ff7518;">Level 5: Moderate</div>
 </div>
-
 <div class="row">
 <label>SPECIAL REQUESTS / ALLERGIES:</label>
 <textarea id="notes" rows="3" placeholder="Tell us what scares you..."></textarea>
 </div>
 </div>
-
 <button id="nextBtn" onclick="nextStep()">CONTINUE</button>
+</div>
+<div id="loader" style="display:none;">
+<h2>PROCESSING SOUL...</h2>
+<div id="progBox">
+<div id="progFill"></div>
+</div>
+<p id="loadTxt">Connecting to underworld...</p>
 </div>
 </div>
 <script src="script.js"></script>
