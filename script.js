@@ -25,14 +25,15 @@ else if(v < 9)
 lbl.innerText = "Level " + v + ": Severe";
 else
 lbl.innerText = "Level " + v + ": LETHAL";
-if(v>=9){
+
+if(v >= 9){
 lbl.style.color = 'red';
 document.body.style.background = '#1a0000';
 }
 else{
 lbl.style.color = '#ff7518';
 document.body.style.background = '#0a0a0a';
- }
+  }
 });
 document.getElementById('notes').addEventListener('input', function(e){
 var txt = e.target.value.toLowerCase();
@@ -54,7 +55,6 @@ else{
 e.target.classList.remove('red-text');
   }
 });
-
 function nextStep(){
 if(step == 1){
 var n = document.getElementById('fname').value;
@@ -70,14 +70,17 @@ else if(step==2){
 var chk = document.getElementById('agree').checked;
 if(!chk){
 document.getElementById('formBox').style.borderColor = 'red';
-setTimeout(function(){ document.getElementById('formBox').style.borderColor = '#333'; }, 500);
+setTimeout(function(){
+document.getElementById('formBox').style.borderColor = '#333'; 
+}
+,500);
 return;
 }
 document.getElementById('formBox').style.display = 'none';
 document.getElementById('loader').style.display = 'block';
 runLoader();
  }
-}
+} 
 function runLoader(){
 var p = 0;
 var txts = ["Connecting to underworld...", "Verifying mortality...", "Locating nearest plot...", "Binding soul to contract...", "ERROR: SOUL NOT FOUND. RETRYING..."];
@@ -97,15 +100,21 @@ if(p > 60 && p < 80)
 t.innerText = txts[3];
 if(p >= 90)
 t.innerText = txts[4];
-}, 200);
-
+},200);
 setTimeout(function(){
 clearInterval(int);
 fill.style.width = '100%';
 t.innerText = "TICKET RESERVED.";
 setTimeout(showTicket, 2000);
- },12000);
+ },2000);
 }
 function showTicket(){
-alert("Ticket Generated!");
+document.getElementById('loader').style.display = 'none';
+document.getElementById('ticket').style.display = 'block';
+document.getElementById('t-name').innerText = document.getElementById('fname').value.toUpperCase();
+document.getElementById('t-date').innerText = document.getElementById('date').value;
+document.getElementById('t-time').innerText = document.getElementById('time').value;
+}
+function printT(){
+alert("Printer offline. You cannot leave.");
 }
