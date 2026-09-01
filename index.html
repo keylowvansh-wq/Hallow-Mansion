@@ -52,6 +52,7 @@ I, the undersigned, acknowledge that the Blackwood Manor Halloween Experience co
 <textarea id="notes" rows="3" placeholder="Tell us what scares you..."></textarea>
 </div>
 </div>
+
 <button id="nextBtn" onclick="nextStep()">CONTINUE</button>
 </div>
 <div id="loader" style="display:none;">
@@ -60,6 +61,25 @@ I, the undersigned, acknowledge that the Blackwood Manor Halloween Experience co
 <div id="progFill"></div>
 </div>
 <p id="loadTxt">Connecting to underworld...</p>
+</div>
+<div id="ticket" style="display:none;">
+<div class="ticket-inner">
+<div class="t-head">
+<h2>ADMIT ONE</h2>
+<div class="t-logo">BLACKWOOD MANOR</div>
+</div>
+<div class="t-body">
+<div class="t-row"><span>GUEST:</span> <span id="t-name">---</span></div>
+<div class="t-row"><span>DATE:</span> <span id="t-date">---</span></div>
+<div class="t-row"><span>TIME:</span> <span id="t-time">---</span></div>
+<div class="t-row"><span>SEAT:</span> <span style="color:red;">COFFIN 6B</span></div>
+<div class="t-row"><span>RETURN:</span> <span style="color:red;">NEVER</span></div>
+</div>
+<div class="t-foot">
+<p>DO NOT LOSE THIS TICKET. IT IS YOUR ONLY PROOF OF EXISTENCE.</p>
+<button onclick="printT()">PRINT TICKET</button>
+</div>
+</div>
 </div>
 </div>
 <script src="script.js"></script>
