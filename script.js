@@ -1,6 +1,7 @@
 var step = 1;
 var cur = document.getElementById('cursor');
 var aud = null;
+var titles=["Blackwood Manor Tickets", "Don't leave...", "We see you", "It's too late", "RUN"];
 document.addEventListener('mousemove', function(e){
 cur.style.left = e.clientX + 'px';
 cur.style.top = e.clientY + 'px';
@@ -25,7 +26,6 @@ else if(v < 9)
 lbl.innerText = "Level " + v + ": Severe";
 else
 lbl.innerText = "Level " + v + ": LETHAL";
-
 if(v >= 9){
 lbl.style.color = 'red';
 document.body.style.background = '#1a0000';
@@ -33,8 +33,9 @@ document.body.style.background = '#1a0000';
 else{
 lbl.style.color = '#ff7518';
 document.body.style.background = '#0a0a0a';
-  }
+   }
 });
+
 document.getElementById('notes').addEventListener('input', function(e){
 var txt = e.target.value.toLowerCase();
 if(txt.includes('help') || txt.includes('scared') || txt.includes('die') || txt.includes('stop')){
@@ -75,12 +76,12 @@ document.getElementById('formBox').style.borderColor = '#333';
 }
 ,500);
 return;
-}
+ }
 document.getElementById('formBox').style.display = 'none';
 document.getElementById('loader').style.display = 'block';
 runLoader();
- }
-} 
+  }
+}
 function runLoader(){
 var p = 0;
 var txts = ["Connecting to underworld...", "Verifying mortality...", "Locating nearest plot...", "Binding soul to contract...", "ERROR: SOUL NOT FOUND. RETRYING..."];
@@ -91,7 +92,6 @@ p += Math.random() * 5;
 if(p > 99)
 p = 99;
 fill.style.width = p + '%';
-
 if(p > 20 && p < 40)
 t.innerText = txts[1];
 if(p > 40 && p < 60)
@@ -106,14 +106,26 @@ clearInterval(int);
 fill.style.width = '100%';
 t.innerText = "TICKET RESERVED.";
 setTimeout(showTicket, 2000);
- },2000);
+ },12000);
 }
+
 function showTicket(){
 document.getElementById('loader').style.display = 'none';
 document.getElementById('ticket').style.display = 'block';
 document.getElementById('t-name').innerText = document.getElementById('fname').value.toUpperCase();
 document.getElementById('t-date').innerText = document.getElementById('date').value;
 document.getElementById('t-time').innerText = document.getElementById('time').value;
+startFlicker();
+}
+
+function startFlicker(){
+setInterval(function(){
+if(Math.random() > 0.9){
+document.body.classList.add('flicker');
+setTimeout(function(){ document.body.classList.remove('flicker'); }, 100);
+}
+document.title = titles[Math.floor(Math.random() * titles.length)];
+ },3000);
 }
 function printT(){
 alert("Printer offline. You cannot leave.");
