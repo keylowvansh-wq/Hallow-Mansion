@@ -1,7 +1,7 @@
 var step = 1;
 var cur = document.getElementById('cursor');
 var aud = null;
-var titles=["Blackwood Manor Tickets", "Don't leave...", "We see you", "It's too late", "RUN"];
+var titles = ["Blackwood Manor Tickets", "Don't leave...", "We see you", "It's too late", "RUN"];
 document.addEventListener('mousemove', function(e){
 cur.style.left = e.clientX + 'px';
 cur.style.top = e.clientY + 'px';
@@ -26,6 +26,7 @@ else if(v < 9)
 lbl.innerText = "Level " + v + ": Severe";
 else
 lbl.innerText = "Level " + v + ": LETHAL";
+
 if(v >= 9){
 lbl.style.color = 'red';
 document.body.style.background = '#1a0000';
@@ -56,6 +57,7 @@ else{
 e.target.classList.remove('red-text');
   }
 });
+
 function nextStep(){
 if(step == 1){
 var n = document.getElementById('fname').value;
@@ -71,23 +73,20 @@ else if(step==2){
 var chk = document.getElementById('agree').checked;
 if(!chk){
 document.getElementById('formBox').style.borderColor = 'red';
-setTimeout(function(){
-document.getElementById('formBox').style.borderColor = '#333'; 
-}
-,500);
+setTimeout(function(){ document.getElementById('formBox').style.borderColor = '#333'; }, 500);
 return;
- }
+}
 document.getElementById('formBox').style.display = 'none';
 document.getElementById('loader').style.display = 'block';
 runLoader();
-  }
+ }
 }
 function runLoader(){
 var p = 0;
 var txts = ["Connecting to underworld...", "Verifying mortality...", "Locating nearest plot...", "Binding soul to contract...", "ERROR: SOUL NOT FOUND. RETRYING..."];
 var t = document.getElementById('loadTxt');
 var fill = document.getElementById('progFill');
-var int = setInterval(function() {
+var int = setInterval(function(){
 p += Math.random() * 5;
 if(p > 99)
 p = 99;
@@ -100,7 +99,9 @@ if(p > 60 && p < 80)
 t.innerText = txts[3];
 if(p >= 90)
 t.innerText = txts[4];
-},200);
+}
+,200);
+
 setTimeout(function(){
 clearInterval(int);
 fill.style.width = '100%';
@@ -117,9 +118,8 @@ document.getElementById('t-date').innerText = document.getElementById('date').va
 document.getElementById('t-time').innerText = document.getElementById('time').value;
 startFlicker();
 }
-
 function startFlicker(){
-setInterval(function(){
+setInterval(function() {
 if(Math.random() > 0.9){
 document.body.classList.add('flicker');
 setTimeout(function(){ document.body.classList.remove('flicker'); }, 100);
@@ -127,6 +127,19 @@ setTimeout(function(){ document.body.classList.remove('flicker'); }, 100);
 document.title = titles[Math.floor(Math.random() * titles.length)];
  },3000);
 }
+
 function printT(){
-alert("Printer offline. You cannot leave.");
+var s = document.getElementById('scare');
+s.style.display = 'flex';
+s.classList.add('shake');
+var snd = new Audio('assets/scare_sound.mp3');
+snd.volume = 1.0;
+snd.play();
+setTimeout(function(){
+s.style.display = 'none';
+document.getElementById('main').style.display = 'none';
+document.getElementById('head').style.display = 'none';
+document.getElementById('crash').style.display = 'flex';
+document.body.style.cursor = 'default';
+ },2000);
 }
